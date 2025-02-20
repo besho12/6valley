@@ -2,30 +2,29 @@
 
 namespace App\Http\Controllers\RestAPI\v1;
 
-use App\Models\User;
-use App\Models\Order;
-use App\Models\Review;
-use App\Utils\Helpers;
-use App\Models\Wishlist;
-use App\Models\AdsPoints;
+use App\Http\Controllers\Controller;
+use App\Models\BusinessSetting;
+use App\Models\DeliveryCountryCode;
+use App\Models\DeliveryZipCode;
 use App\Models\GuestUser;
+use App\Models\Order;
 use App\Models\OrderDetail;
+use App\Models\Review;
+use App\Models\ShippingAddress;
+use App\Models\SupportTicket;
+use App\Models\SupportTicketConv;
+use App\Models\Wishlist;
 use App\Traits\CommonTrait;
 use App\Traits\PdfGenerator;
-use Illuminate\Http\Request;
-use App\Models\SupportTicket;
-use App\Utils\CustomerManager;
-use App\Models\BusinessSetting;
-use App\Models\DeliveryZipCode;
-use App\Models\ShippingAddress;
 use App\Traits\FileManagerTrait;
-use App\Models\SupportTicketConv;
+use App\Models\User;
+use App\Utils\CustomerManager;
+use App\Utils\Helpers;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\DeliveryCountryCode;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class CustomerController extends Controller
@@ -618,16 +617,6 @@ class CustomerController extends Controller
         $user->app_language = $request->current_language;
         $user->save();
 
-        return response()->json(['message' => 'Successfully change'], 200);
-    }
-
-    public function add_ads_points(Request $request)
-    {
-        AdsPoints::create([
-            'user_id'     => $request['user_id'],
-            'points'      => $request['points'],
-            'created_at'  => date('Y-m-d H:i:s'),
-        ]);
         return response()->json(['message' => 'Successfully change'], 200);
     }
 }

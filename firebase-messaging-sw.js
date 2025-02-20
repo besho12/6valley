@@ -3,13 +3,13 @@ importScripts('https://www.gstatic.com/firebasejs/8.3.2/firebase-messaging.js');
 importScripts('https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js');
 
 firebase.initializeApp({
-    apiKey: "AIzaSyAk7MDFEDq0sZTMU9GQ1OQ7x5TtaolSFw0",
-    authDomain: "drivevalley-fdb7f.firebaseapp.com",
-    projectId: "drivevalley-fdb7f",
-    storageBucket: "drivevalley-fdb7f.appspot.com",
-    messagingSenderId: "76471554747",
-    appId: "1:76471554747:web:63392218660695de6d0f9e",
-    measurementId: "76471554747"
+    apiKey: "AIzaSyC3x_YiaCCHsvnkLUfWRilmBG-SErQfFtg",
+    authDomain: "abkrino-ba227.firebaseapp.com",
+    projectId: "abkrino-ba227",
+    storageBucket: "abkrino-ba227.appspot.com",
+    messagingSenderId: "830039760364",
+    appId: "1:830039760364:android:6c128d8e695a86258bf4c9",
+    measurementId: ""
 });
 
 const messaging = firebase.messaging();
